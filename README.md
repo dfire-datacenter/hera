@@ -1,13 +1,25 @@
 
 
 # 数据平台打造的任务调度系统(HERA)
+
+[![Build Status](https://travis-ci.org/scxwhite/hera.svg?branch=open-source)](https://travis-ci.org/scxwhite/hera) [![](https://www.jitpack.io/v/scxwhite/hera.svg)](https://www.jitpack.io/#scxwhite/hera)
+
 [![Build Status](https://travis-ci.org/scxwhite/hera.svg?branch=open-source)](https://travis-ci.org/scxwhite/hera)
 
 
 
 
 # 交流群
-    见文章末尾
+
+微信交流群
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2019010219083078.png)
+
+个人微信(失效加我拉你进去)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190102190821351.png)
+
+
 # 介绍文章
 [赫拉(hera)分布式任务调度系统之架构，基本功能(一)](https://blog.csdn.net/su20145104009/article/details/85124746)
 
@@ -19,7 +31,7 @@
 
 >hera分布式任务调度系统是根据前阿里开源调度系统(`zeus`)进行的二次开发，其中zeus大概在2014年开源，开源后却并未进行维护。我公司(二维火)2015年引进了zeus任务调度系统，一直使用至今年11月份，在我们部门乃至整个公司发挥着不可替代的作用。在我使用zeus的这一年多，不得不承认它的强大，只要集群规模于配置适度，他可以承担数万乃至十万甚至更高的数量级的任务调度。但是由于zeus代码是未维护的，前端更是使用GWT技术，难于在`zeus`上面进行维护。我与另外一个小伙伴(花名：凌霄，现在阿里淘宝部门)于今年三月份开始重写`zeus`，改名赫拉(hera)
     
-```***项目地址：git@github.com:scxwhite/hera.git ***```
+```***项目地址：git@github.com:scxwhite/hera.git  ***```
 ## 架构
 `hera`系统只是负责调度以及辅助的系统，具体的计算还是要落在`hadoop、hive、yarn、spark`等集群中去。所以此时又一个硬性要求，如果要执行`hadoop，hive，spark`等任务，我们的`hera`系统的`worker`一定要部署在这些集群某些机器之上。如果仅仅是`shell`,那么也至少需要`linux`系统。对于`windows`系统，可以把自己作为`master`进行调试。
 
@@ -515,10 +527,6 @@ download[hdfs:///hera/hdfs-upload-dir/hera-20181229-110455.sql hera.sql]
 ## 脚本自动保存
 当在开发中心写脚本时，脚本会自动保存。当然也可以通过点击保存脚本进行手动保存。
 
-微信交流群
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2019010219083078.png)
-
-个人微信(失效加我拉你进去)
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190102190821351.png)
+## Spark相关
+使用Spark需要自行选择Spark版本，并部署在worker上，具体部署方法和示例之后会整理给出。
